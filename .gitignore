@@ -1,2 +1,4 @@
 .env
 venv/*
+service_account.json
+token.json
