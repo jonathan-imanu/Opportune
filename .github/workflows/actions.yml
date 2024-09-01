@@ -1,7 +1,7 @@
 name: run main.py
 on:
   schedule:
-    - cron: '0 */2 * * *' # Run every three days
+    - cron: '0 */2 * * *' # Run every two hours
   workflow_dispatch:
     inputs:
       logLevel:
