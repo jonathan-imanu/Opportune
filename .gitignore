@@ -2,3 +2,4 @@
 venv/*
 service_account.json
 token.json
+__pycache__/*
