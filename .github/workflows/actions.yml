@@ -1,7 +1,7 @@
 name: run main.py
 on:
-  schedule:
-    - cron: '0 */2 * * *' # Run every two hours
+#   schedule:
+#     - cron: '0 */2 * * *' SCHEUDULE WAS REMOVED DUE TO CONSTANT CHALLENGE EXEPTIONS
   workflow_dispatch:
     inputs:
       logLevel:
