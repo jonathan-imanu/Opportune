@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 # Each job is the following format:
 
@@ -8,10 +8,12 @@ import datetime
 # 'contentSource': 'JOBS_PREMIUM_OFFLINE', 'entityUrn': 'urn:li:fsd_jobPosting:4011258684'}
 
 # The url for this job would be https://www.linkedin.com/jobs/view/4011258684/, a parsed version of the trackingUrn
-urns = set()
 
 def format_jobs(unformatted_jobs, keyword, location, urns):
     formatted_jobs = []
+    
+    now = datetime.now()
+    formatted_date = now.strftime("%d %b")
     
     for job in unformatted_jobs:
         tracking_urn = job['trackingUrn'].split(':')[-1]
@@ -20,15 +22,14 @@ def format_jobs(unformatted_jobs, keyword, location, urns):
             continue
         else:
             urns.add(tracking_urn)
-
-
+        
         formatted_jobs.append(['Fetched ',
             keyword,
             job['title'],
             location,
             "Toronto",
             f"https://www.linkedin.com/jobs/view/{tracking_urn}",
-            
+            formatted_date,
             ])
         
     return formatted_jobs
