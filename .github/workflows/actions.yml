@@ -45,15 +45,16 @@ jobs:
           LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
           SERVICE_PATH: ${{ secrets.SERVICE_PATH }}
           SHEET_NAME: ${{ secrets.SHEET_NAME }}
-          CURRENT_ROW_NUMBER: ${{ secrets.CURRENT_ROW_NUMBER }}
         run: python main.py
           
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -A
+          git add logs.txt
           git diff-index --quiet HEAD || (git commit -a -m "workflow: updated logs.txt" --allow-empty)
+          git add row_number.txt
+          git diff-index --quiet HEAD || (git commit -a -m "workflow: updated row_number.txt" --allow-empty)
           
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0

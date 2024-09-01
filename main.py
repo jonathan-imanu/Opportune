@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import pandas as pd
 import gspread
 
-from utils import update_env_variable
+from utils import get_row_number, update_row_number
 from jobs import format_jobs
 
 load_dotenv()
@@ -14,7 +14,7 @@ linkedin_username = os.getenv("LINKEDIN_USERNAME")
 linkedin_password = os.getenv("LINKEDIN_PASSWORD")
 service_path = os.getenv("SERVICE_PATH")
 tracker_sheet = os.getenv("SHEET_NAME")
-current_row_number = int(os.getenv("CURRENT_ROW_NUMBER"))
+current_row_number = get_row_number()
 
 # Configure logging
 
@@ -63,17 +63,18 @@ for keyword in keywords:
     to_upload.extend(formatted_remote_jobs) 
     to_upload.extend(formatted_hybird_jobs)
 
-total = len(to_upload)
-new_start = current_row_number + total
-
 # Upload to Google Sheets
+
+total = len(to_upload)
+end = current_row_number + total
+cell_range = f"A{current_row_number}:G{end}"
 
 gc = gspread.service_account(filename=service_path)
 sh = gc.open(tracker_sheet)
 worksheet = sh.worksheet('Tracker')  
-
+worksheet.update(range_name=cell_range, values=to_upload)
 
 # Update .env file for next run
 
-os.environ["CURRENT_ROW_NUMBER"] = str(new_start)
-# Use if working with a local .env file: update_env_variable("CURRENT_ROW_NUMBER", str(new_start))
+update_row_number(end)
+# If working with a local .env file, you can update_env_variable("CURRENT_ROW_NUMBER", str(end + 1)) from utils.py
