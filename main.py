@@ -1,4 +1,5 @@
 import os
+import logging
 from linkedin_api import Linkedin
 from dotenv import load_dotenv
 import pandas as pd
@@ -62,4 +63,5 @@ worksheet = sh.worksheet('Tracker')
 
 # Update .env file for next run
 
-update_env_variable("CURRENT_ROW_NUMBER", str(new_start))
+os.environ["CURRENT_ROW_NUMBER"] = str(new_start)
+# Use if working with a local .env file: update_env_variable("CURRENT_ROW_NUMBER", str(new_start))
