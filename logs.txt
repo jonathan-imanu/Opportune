@@ -1,0 +1,3 @@
+09/01/16:13,77 Opportune INFO Logged in to LinkedIn
+09/01/16:14,970 Opportune INFO Fetched 1 jobs
+09/01/16:14,885 Opportune INFO Updated row number to 5

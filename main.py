@@ -4,6 +4,7 @@ from linkedin_api import Linkedin
 from dotenv import load_dotenv
 import pandas as pd
 import gspread
+import json
 
 from utils import get_row_number, update_row_number
 from jobs import format_jobs
@@ -12,7 +13,7 @@ load_dotenv()
 
 linkedin_username = os.getenv("LINKEDIN_USERNAME")
 linkedin_password = os.getenv("LINKEDIN_PASSWORD")
-credentials = os.getenv("SERVICE_JSON")
+credentials = json.loads(os.getenv("SERVICE_JSON"))
 tracker_sheet = os.getenv("SHEET_NAME")
 current_row_number = get_row_number()
 

@@ -1,0 +1,1 @@
+0 */2 * * * /home/jonathan-imanu/dev/opportune/scripts/autoScraping.bash

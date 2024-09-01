@@ -10,9 +10,11 @@ The tool tracks internships based on the following keywords and categorizes them
 - Data Scientist
 - Machine Learning Engineer
 
+Every 2 hours, Opportune will update this [Google Sheet](https://docs.google.com/spreadsheets/d/1Zr8g0dNSZ3Ty1LCo_NL4CNLRcFSjKfUt7sM1STkyfzQ/edit?gid=0#gid=0) with the latest internship listings.
+
 ## 🕒 Automation
 
-Opportune runs automatically every 2 hours using GitHub Actions. It updates this [Google Sheet](https://docs.google.com/spreadsheets/d/1Zr8g0dNSZ3Ty1LCo_NL4CNLRcFSjKfUt7sM1STkyfzQ/edit?gid=0#gid=0) with the latest internship listings.
+Originally, I planned to run Opportune automatically  using GitHub Actions. However, this approach (and potentially other remote solutions) leads to [CHALLENGE](https://github.com/tomquirk/linkedin-api?tab=readme-ov-file#i-keep-getting-a-challenge) exceptions from the LinkedIn API. This issue is likely due to the difference in IP addresses between the GitHub Actions server and your local machine where you access LinkedIn. To resolve this, Opportune is run on my local machine using cron. 
 
 ## Make your own spreadsheet
 
