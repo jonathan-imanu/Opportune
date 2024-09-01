@@ -16,9 +16,21 @@ service_path = os.getenv("SERVICE_PATH")
 tracker_sheet = os.getenv("SHEET_NAME")
 current_row_number = int(os.getenv("CURRENT_ROW_NUMBER"))
 
-linkedin_scraper = Linkedin(linkedin_username, linkedin_password)
+# Configure logging
+
+logger = logging.getLogger("Opportune")
+logger.setLevel(logging.INFO)
+
+file_handler = logging.FileHandler("logs.txt")
+file_handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s', datefmt='%m/%d/%H:%M')
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
 
 # Get latest internships in Toronto from LinkedIn
+
+linkedin_scraper = Linkedin(linkedin_username, linkedin_password)
 
 keywords = ["Software Developer", "Software Engineer", "Data Engineer", "Data Scientist", "Machine Learning Engineer"]
 to_upload = []
