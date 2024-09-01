@@ -17,7 +17,8 @@ current_row_number = int(os.getenv("CURRENT_ROW_NUMBER"))
 
 linkedin_scraper = Linkedin(linkedin_username, linkedin_password)
 
-# Get latest software jobs in Ontario 
+# Get latest internships in Toronto from LinkedIn
+
 keywords = ["Software Developer", "Software Engineer", "Data Engineer", "Data Scientist", "Machine Learning Engineer"]
 to_upload = []
 urns = set() # Each urn is unqiue so we can use this to check for duplicates
@@ -48,7 +49,10 @@ for keyword in keywords:
     to_upload.extend(formatted_onsite_jobs)
     to_upload.extend(formatted_remote_jobs) 
     to_upload.extend(formatted_hybird_jobs)
-    
+
+total = len(to_upload)
+new_start = current_row_number + total
+
 # Upload to Google Sheets
 
 gc = gspread.service_account(filename=service_path)
@@ -58,6 +62,4 @@ worksheet = sh.worksheet('Tracker')
 
 # Update .env file for next run
 
-total = len(to_upload)
-new_start = current_row_number + total
 update_env_variable("CURRENT_ROW_NUMBER", str(new_start))

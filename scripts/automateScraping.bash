@@ -1,5 +1,4 @@
 #!/bin/bash
 
-# Avoid JWT Token Errors
-sudo ntpdate pool.ntp.org
+sudo ntpdate pool.ntp.org # Avoid JWT Token Errors
 python -u "/home/jonathan-imanu/dev/opportune/main.py" 
