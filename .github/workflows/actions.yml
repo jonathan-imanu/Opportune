@@ -43,7 +43,7 @@ jobs:
         env:
           LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
           LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
-          SERVICE_PATH: ${{ secrets.SERVICE_PATH }}
+          SERVICE_JSON: ${{ secrets.SERVICE_JSON }}
           SHEET_NAME: ${{ secrets.SHEET_NAME }}
         run: python main.py
           

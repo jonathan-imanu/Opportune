@@ -12,7 +12,7 @@ load_dotenv()
 
 linkedin_username = os.getenv("LINKEDIN_USERNAME")
 linkedin_password = os.getenv("LINKEDIN_PASSWORD")
-service_path = os.getenv("SERVICE_PATH")
+credentials = os.getenv("SERVICE_JSON")
 tracker_sheet = os.getenv("SHEET_NAME")
 current_row_number = get_row_number()
 
@@ -69,7 +69,7 @@ total = len(to_upload)
 end = current_row_number + total
 cell_range = f"A{current_row_number}:G{end}"
 
-gc = gspread.service_account(filename=service_path)
+gc = gspread.service_account_from_dict(credentials)
 sh = gc.open(tracker_sheet)
 worksheet = sh.worksheet('Tracker')  
 worksheet.update(range_name=cell_range, values=to_upload)
