@@ -31,6 +31,7 @@ logger.addHandler(file_handler)
 # Get latest internships in Toronto from LinkedIn
 
 linkedin_scraper = Linkedin(linkedin_username, linkedin_password)
+logger.info("Logged in to LinkedIn")
 
 keywords = ["Software Developer", "Software Engineer", "Data Engineer", "Data Scientist", "Machine Learning Engineer"]
 to_upload = []
@@ -66,6 +67,8 @@ for keyword in keywords:
 # Upload to Google Sheets
 
 total = len(to_upload)
+logger.info("Fetched %d jobs", total)
+
 end = current_row_number + total
 cell_range = f"A{current_row_number}:G{end}"
 
@@ -77,4 +80,5 @@ worksheet.update(range_name=cell_range, values=to_upload)
 # Update .env file for next run
 
 update_row_number(end)
+logger.info("Updated row number to %d", end)
 # If working with a local .env file, you can update_env_variable("CURRENT_ROW_NUMBER", str(end + 1)) from utils.py
