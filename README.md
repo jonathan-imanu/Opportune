@@ -1,6 +1,8 @@
 # 🚀 Opportune 🚀
 
-Opportune is a simple project that fetches the latest software internships in Toronto from LinkedIn using an Tom Quirk's [linkedin-api](https://github.com/tomquirk/linkedin-api) and records them in a Google Sheet. Currently the following keywords are tracked across on-site, hybrid and remote internship postings:
+Opportune is a straightforward tool designed to help you stay updated with the latest software internships in Toronto. It does this by using Tom Quirk's [linkedin-api](https://github.com/tomquirk/linkedin-api) to fetch job listings from LinkedIn and then records them in a Google Sheet.
+
+The tool tracks internships based on the following keywords and categorizes them into on-site, hybrid, and remote positions:
 
 - Software Developer
 - Software Engineer
