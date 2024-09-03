@@ -4,3 +4,4 @@ service_account.json
 token.json
 __pycache__/*
 __pycache__
+venv

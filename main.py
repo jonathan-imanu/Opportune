@@ -9,13 +9,6 @@ import json
 from utils import get_row_number, update_row_number
 from jobs import format_jobs
 
-load_dotenv()
-
-linkedin_username = os.getenv("LINKEDIN_USERNAME")
-linkedin_password = os.getenv("LINKEDIN_PASSWORD")
-credentials = json.loads(os.getenv("SERVICE_JSON"))
-tracker_sheet = os.getenv("SHEET_NAME")
-current_row_number = get_row_number()
 
 # Configure logging
 
@@ -28,6 +21,16 @@ formatter = logging.Formatter('%(asctime)s,%(msecs)d %(name)s %(levelname)s %(me
 file_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
+logger.info("Process Started")
+
+load_dotenv()
+
+linkedin_username = os.getenv("LINKEDIN_USERNAME")
+linkedin_password = os.getenv("LINKEDIN_PASSWORD")
+credentials_path = os.getenv("SERVICE_JSON_PATH")
+# credentials = json.loads(os.getenv("SERVICE_JSON"))
+tracker_sheet = os.getenv("SHEET_NAME")
+current_row_number = get_row_number()
 
 # Get latest internships in Toronto from LinkedIn
 
@@ -73,7 +76,9 @@ logger.info("Fetched %d jobs", total)
 end = current_row_number + total
 cell_range = f"A{current_row_number}:G{end}"
 
-gc = gspread.service_account_from_dict(credentials)
+gc = gspread.service_account(filename=credentials_path)
+# gc = gspread.service_account_from_dict(credentials)
+
 sh = gc.open(tracker_sheet)
 worksheet = sh.worksheet('Tracker')  
 worksheet.update(range_name=cell_range, values=to_upload)
