@@ -2,13 +2,12 @@ import os
 import logging
 from linkedin_api import Linkedin
 from dotenv import load_dotenv
-import pandas as pd
 import gspread
 import json
+from datetime import datetime
 
-from utils import get_row_number, update_row_number
+from utils import get_row_number, update_row_number, get_time_of_last_run
 from jobs import format_jobs
-
 
 # Configure logging
 
@@ -41,24 +40,34 @@ keywords = ["Software Developer", "Software Engineer", "Data Engineer", "Data Sc
 to_upload = []
 urns = set() # Each urn is unqiue so we can use this to check for duplicates
 
+# cron jobs don't run if your machine is off, so we need to check for the time since the last run
+# and fetch jobs posted since then
+
+last_ran = get_time_of_last_run()
+now = datetime.now()
+delta = now - last_ran
+delta = int(round(delta.total_seconds()))
+
+logger.info("Looking for jobs posted in the last %d seconds", delta)
+
 for keyword in keywords:
     unformatted_onsite_jobs = linkedin_scraper.search_jobs(keywords=keyword,
                         location_name="Toronto",
                         experience=["1"],
                         remote=["1"],
-                        listed_at=7200)
+                        listed_at=delta)
 
     unformatted_remote_jobs = linkedin_scraper.search_jobs(keywords=keyword,
                         location_name="Toronto",
                         experience=["1"],
                         remote=["2"],
-                        listed_at=7200)
+                        listed_at=delta)
 
     unformatted_hybrid_jobs = linkedin_scraper.search_jobs(keywords=keyword,
                         location_name="Toronto",
                         experience=["1"],
                         remote=["3"],
-                        listed_at=7200)
+                        listed_at=delta)
 
     formatted_onsite_jobs = format_jobs(unformatted_onsite_jobs, keyword, 'On-site', urns)
     formatted_remote_jobs = format_jobs(unformatted_remote_jobs, keyword, 'Remote', urns)

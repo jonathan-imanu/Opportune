@@ -15,3 +15,60 @@
 09/03/15:07,856 Opportune INFO Logged in to LinkedIn
 09/03/15:10,487 Opportune INFO Fetched 1 jobs
 09/03/15:10,129 Opportune INFO Updated row number to 6
+09/03/17:42,960 Opportune INFO Process Started
+09/03/17:42,561 Opportune INFO Logged in to LinkedIn
+09/03/17:46,701 Opportune INFO Fetched 5 jobs
+09/03/17:48,365 Opportune INFO Process Started
+09/03/17:48,728 Opportune INFO Logged in to LinkedIn
+09/03/17:51,601 Opportune INFO Fetched 5 jobs
+09/03/17:52,560 Opportune INFO Updated row number to 11
+09/03/21:25,684 Opportune INFO Process Started
+09/03/21:25,18 Opportune INFO Logged in to LinkedIn
+09/03/21:28,268 Opportune INFO Fetched 2 jobs
+09/03/21:28,807 Opportune INFO Updated row number to 13
+09/03/22:00,866 Opportune INFO Process Started
+09/03/22:00,0 Opportune INFO Logged in to LinkedIn
+09/03/22:03,351 Opportune INFO Fetched 3 jobs
+09/03/22:03,894 Opportune INFO Updated row number to 16
+09/04/00:00,341 Opportune INFO Process Started
+09/04/00:00,394 Opportune INFO Logged in to LinkedIn
+09/04/00:02,909 Opportune INFO Fetched 1 jobs
+09/04/00:02,141 Opportune INFO Updated row number to 17
+09/05/10:10,323 Opportune INFO Process Started
+09/05/10:10,554 Opportune INFO Logged in to LinkedIn
+09/05/10:11,169 Opportune INFO Fetched 0 jobs
+09/05/10:11,426 Opportune INFO Updated row number to 17
+09/05/22:00,854 Opportune INFO Process Started
+09/05/22:00,48 Opportune INFO Logged in to LinkedIn
+09/05/22:02,233 Opportune INFO Fetched 5 jobs
+09/05/22:02,74 Opportune INFO Updated row number to 22
+09/06/00:00,814 Opportune INFO Process Started
+09/06/00:00,937 Opportune INFO Logged in to LinkedIn
+09/06/00:02,445 Opportune INFO Fetched 1 jobs
+09/06/00:02,418 Opportune INFO Updated row number to 23
+09/06/11:19,935 Opportune INFO Process Started
+09/06/11:19,298 Opportune INFO Logged in to LinkedIn
+09/06/11:24,993 Opportune INFO Process Started
+09/06/11:24,164 Opportune INFO Logged in to LinkedIn
+09/06/11:25,757 Opportune INFO Fetched 6 jobs
+09/06/11:25,734 Opportune INFO Updated row number to 29
+09/06/11:55,851 Opportune INFO Process Started
+09/06/11:55,885 Opportune INFO Logged in to LinkedIn
+09/06/11:56,322 Opportune INFO Process Started
+09/06/11:56,703 Opportune INFO Logged in to LinkedIn
+09/06/11:58,179 Opportune INFO Process Started
+09/06/11:58,614 Opportune INFO Logged in to LinkedIn
+09/06/11:58,335 Opportune INFO Process Started
+09/06/11:58,609 Opportune INFO Logged in to LinkedIn
+09/06/11:59,813 Opportune INFO Process Started
+09/06/11:59,55 Opportune INFO Logged in to LinkedIn
+09/06/11:59,855 Opportune INFO Process Started
+09/06/11:59,94 Opportune INFO Logged in to LinkedIn
+09/06/11:59,96 Opportune INFO Looking for jobs posted in the last 54 seconds
+09/06/12:00,791 Opportune INFO Process Started
+09/06/12:00,395 Opportune INFO Logged in to LinkedIn
+09/06/12:00,398 Opportune INFO Looking for jobs posted in the last 6 seconds
+09/06/12:01,611 Opportune INFO Fetched 3 jobs
+09/06/12:01,22 Opportune INFO Updated row number to 32
+09/06/12:01,466 Opportune INFO Fetched 0 jobs
+09/06/12:01,858 Opportune INFO Updated row number to 29
