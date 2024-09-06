@@ -36,7 +36,7 @@ current_row_number = get_row_number()
 linkedin_scraper = Linkedin(linkedin_username, linkedin_password)
 logger.info("Logged in to LinkedIn")
 
-keywords = ["Software Developer", "Software Engineer", "Data Engineer", "Data Scientist", "Machine Learning Engineer"]
+keywords = ["Software Developer", "Software Engineer", "Data Engineer", "Machine Learning Engineer"]
 to_upload = []
 urns = set() # Each urn is unqiue so we can use this to check for duplicates
 
