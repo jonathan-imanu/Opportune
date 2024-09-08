@@ -20,7 +20,15 @@ formatter = logging.Formatter('%(asctime)s,%(msecs)d %(name)s %(levelname)s %(me
 file_handler.setFormatter(formatter)
 
 logger.addHandler(file_handler)
-logger.info("Process Started")
+
+# cron jobs don't run if your machine is off, so we need to check for the time since the last run
+# and fetch jobs posted since then
+
+last_ran = get_time_of_last_run()
+now = datetime.now()
+delta = now - last_ran
+delta = int(round(delta.total_seconds()))
+logger.info("Process Started: Last ran %d seconds ago", delta)
 
 load_dotenv()
 
@@ -39,14 +47,6 @@ logger.info("Logged in to LinkedIn")
 keywords = ["Software Developer", "Software Engineer", "Data Engineer", "Machine Learning Engineer"]
 to_upload = []
 urns = set() # Each urn is unqiue so we can use this to check for duplicates
-
-# cron jobs don't run if your machine is off, so we need to check for the time since the last run
-# and fetch jobs posted since then
-
-last_ran = get_time_of_last_run()
-now = datetime.now()
-delta = now - last_ran
-delta = int(round(delta.total_seconds()))
 
 logger.info("Looking for jobs posted in the last %d seconds", delta)
 
