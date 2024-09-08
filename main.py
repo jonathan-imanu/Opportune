@@ -23,11 +23,13 @@ logger.addHandler(file_handler)
 
 # cron jobs don't run if your machine is off, so we need to check for the time since the last run
 # and fetch jobs posted since then
+# we do this by checking the time of the last log 
 
 last_ran = get_time_of_last_run()
 now = datetime.now()
 delta = now - last_ran
 delta = int(round(delta.total_seconds()))
+
 logger.info("Process Started: Last ran %d seconds ago", delta)
 
 load_dotenv()

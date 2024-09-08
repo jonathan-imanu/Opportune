@@ -97,3 +97,18 @@
 09/08/00:00,548 Opportune INFO Looking for jobs posted in the last 3 seconds
 09/08/00:01,186 Opportune INFO Fetched 0 jobs
 09/08/00:01,719 Opportune INFO Updated row number to 32
+09/08/00:45,54 Opportune INFO Process Started: Last ran 2649 seconds ago
+09/08/00:45,455 Opportune INFO Logged in to LinkedIn
+09/08/00:45,455 Opportune INFO Looking for jobs posted in the last 2649 seconds
+09/08/00:46,853 Opportune INFO Fetched 0 jobs
+09/08/00:46,253 Opportune INFO Updated row number to 32
+09/08/02:00,525 Opportune INFO Process Started: Last ran 4442 seconds ago
+09/08/02:00,781 Opportune INFO Logged in to LinkedIn
+09/08/02:00,781 Opportune INFO Looking for jobs posted in the last 4442 seconds
+09/08/02:00,76 Opportune INFO Fetched 0 jobs
+09/08/02:00,576 Opportune INFO Updated row number to 32
+09/08/12:00,786 Opportune INFO Process Started: Last ran 36001 seconds ago
+09/08/12:00,372 Opportune INFO Logged in to LinkedIn
+09/08/12:00,372 Opportune INFO Looking for jobs posted in the last 36001 seconds
+09/08/12:01,828 Opportune INFO Fetched 1 jobs
+09/08/12:01,58 Opportune INFO Updated row number to 33
